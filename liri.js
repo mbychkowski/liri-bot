@@ -1,5 +1,5 @@
 require('dotenv').config();
-var keys = require('.=keys');
+var keys = require('./keys');
 
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
@@ -7,9 +7,9 @@ var songs = [];
 
 var request = require('request');
 
-== var client = new Twitter(keys.twitter);
+// var client = new Twitter(keys.twitter);
 
-== user input from console.
+// user input from console.
 var args = process.argv;
 var liriDo = args[2];
 
@@ -18,7 +18,8 @@ for (var i = 3; i < args.length; i++) {
   liriQuery += args[i] + ' ';
 }
 console.log('\nliriDo:', liriDo);
-console.log('liriQuery:', liriQuery, '\n');
+console.log('liriQuery:', liriQuery);
+console.log('\n==========================================================================\n');
 
 switch (liriDo) {
   case 'my-tweets':
@@ -52,34 +53,47 @@ switch (liriDo) {
 
         for (var i = 0; i < songs.length; i++) {
           var num = i + 1;
-          console.log('');
           console.log('[' + num + ']')
           console.log('Artist: ' + songs[i].artist);
           console.log('Name: ' + songs[i].name);
           console.log('Album: ' + songs[i].artist);
           console.log('Preview: ' + songs[i].previewLink);
-          console.log('\n==========================================================================');
+          console.log('\n==========================================================================\n');
         }
       });
 
     break;
 
   case 'movie-this':
-    var requestURL = 'http:==www.omdbapi.com=?' +
+    var requestURL = 'http://www.omdbapi.com/?' +
       't=' + liriQuery + '&' +
-      'plot=short&' +
+      'type=movie&' +
       'apikey=trilogy';
-    request(requestURL, function(error, response, data) {
+    request(requestURL, function(error, response, body) {
 
-      == If the request is successful (i.e. if the response status code is 200)
+      console.log(requestURL);
+      // Response status code 200 is successful request
       if (!error && response.statusCode === 200) {
+        var data = JSON.parse(body);
 
-        == Parse the body of the site and recover just the imdbRating
-        == (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
-        console.log(JSON.parse(data, null, 2));
+        var title = data.Title;
+        var year = data.Year;
+        // change to use index of and search for that database
+        var imdbRating = data.Ratings[0].Value;
+        var tomatoRating = data.Ratings[1].Value;
+        var language = data.Language;
+        var plot = data.Plot;
+        var actors = data.Actors;
+        console.log('*Title: ', title);
+        console.log('*Year: ', year);
+        console.log('*IMDB: ', imdbRating);
+        console.log('*Tomato: ', tomatoRating);
+        console.log('*Language: ', language);
+        console.log('*Plot: ', plot);
+        console.log('*Actors: ', actors);
+        // missing country of productions
       }
     });
-
 
     break;
 
@@ -88,7 +102,7 @@ switch (liriDo) {
     break;
 
   default:
-    console.log("I'm sorry, Sam=JC. I'm afraid I can't do that.");
+    console.log("I'm sorry, Sam. I'm afraid I can't do that.");
 }
 
 function Song(artist, name, album, previewLink) {
