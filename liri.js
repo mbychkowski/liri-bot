@@ -16,11 +16,10 @@ var liriQuery = '';
 for (var i = 3; i < args.length; i++) {
   liriQuery += args[i] + ' ';
 }
+console.log(liriQuery);
 
 // Process liri-bot inputs
 console.log('\nLiri, execute command ' + '"' + liriDo + '"');
-console.log('\nLiri, query for', liriQuery);
-console.log('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 
 switch (liriDo) {
 

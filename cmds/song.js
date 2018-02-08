@@ -22,6 +22,13 @@ Song.prototype.printInfo = function() {
 
 // access node-spotify-api and parse data
 function spotifySearch(liriQuery) {
+  // default if no query provided
+  if (liriQuery === '') {
+    liriQuery = 'The Sign';
+  }
+  console.log('\nLiri, query for', liriQuery);
+  console.log('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
+
   spotify.search({
       type: 'track',
       query: liriQuery

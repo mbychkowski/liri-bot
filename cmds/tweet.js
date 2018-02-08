@@ -20,7 +20,14 @@ Tweet.prototype.printInfo = function() {
   console.log('\n############################################################\n');
 }
 
+// access twitter api and parse data
 function tweetSearch(liriQuery) {
+  // default if no query provided
+  if (liriQuery === '') {
+    liriQuery = 'CapitalWeather';
+  }
+  console.log('\nLiri, query for', liriQuery);
+  console.log('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 
   var params = {
     screen_name: liriQuery,

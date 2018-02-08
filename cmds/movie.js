@@ -28,6 +28,13 @@ Movie.prototype.printInfo = function() {
 
 // accessing OMDB with request and parsing of data
 function omdbSearch(liriQuery) {
+  // default if no query provided
+  if (liriQuery === '') {
+    liriQuery = 'Mr. Nobody';
+  }
+  console.log('\nLiri, query for', liriQuery);
+  console.log('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
+
   var requestURL = 'http://www.omdbapi.com/?' +
     't=' + liriQuery + '&' +
     'type=movie&' +
