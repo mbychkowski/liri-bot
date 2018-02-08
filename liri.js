@@ -2,6 +2,8 @@ require('dotenv').config();
 
 var keys = require('./keys');
 
+var tweetSearch = require('./tweet').tweetSearch;
+
 var spotifySearch = require('./song').spotifySearch;
 
 var omdbSearch = require('./movie').omdbSearch;
@@ -22,6 +24,8 @@ console.log('\n=================================================================
 
 switch (liriDo) {
   case 'my-tweets':
+
+    tweetSearch(liriQuery);
 
     break;
 
