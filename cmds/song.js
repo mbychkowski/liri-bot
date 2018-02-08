@@ -17,7 +17,7 @@ Song.prototype.printInfo = function() {
   console.log('Name: ' + this.name);
   console.log('Album: ' + this.artist);
   console.log('Preview: ' + this.previewLink);
-  console.log('\n==========================================================================\n');
+  console.log('\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n');
 }
 
 // access node-spotify-api and parse data

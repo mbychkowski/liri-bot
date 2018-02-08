@@ -1,7 +1,7 @@
 var keys = require('./keys');
 
 var Twitter = require('twitter');
-var client = new Twitter(keys.twitter);
+var twitter = new Twitter(keys.twitter);
 
 var tweetArr = [];
 
@@ -15,9 +15,9 @@ function Tweet(name, screenName, date, content) {
 Tweet.prototype.printInfo = function() {
   console.log(this.name);
   console.log('@' + this.screenName + '\n');
-  console.log(this.date);
+  console.log(this.date + '\n');
   console.log(this.content);
-  console.log('\n==========================================================================\n');
+  console.log('\n############################################################\n');
 }
 
 function tweetSearch(liriQuery) {
@@ -27,7 +27,7 @@ function tweetSearch(liriQuery) {
     count: 20
   };
 
-  client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  twitter.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
       // console.log(tweets);
       for (var i = 0; i < tweets.length; i++) {
@@ -41,7 +41,6 @@ function tweetSearch(liriQuery) {
 
         tweetArr.push(tweet);
       }
-
     }
   });
 }

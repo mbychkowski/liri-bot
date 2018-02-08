@@ -23,7 +23,7 @@ Movie.prototype.printInfo = function() {
   console.log('* Actors:', this.actors);
   console.log('* Plot:', this.plot);
   // missing country of productions
-  console.log('\n==========================================================================\n');
+  console.log('\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
 }
 
 // accessing OMDB with request and parsing of data
