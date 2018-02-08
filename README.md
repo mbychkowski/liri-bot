@@ -81,7 +81,7 @@ Liri, query for Scott Pilgrim vs The World
 
 [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) - "A simple to use API library for the Spotify REST API."
 
-[request](https://www.npmjs.com/package/request) - Used for accessing OMDB api.
+[request](https://www.npmjs.com/package/request) - Used for accessing OMDB API.
 
 [dotenv](https://www.npmjs.com/package/dotenv) - "Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology."
 
