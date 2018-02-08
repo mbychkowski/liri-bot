@@ -17,9 +17,15 @@ TWITTER_ACCESS_TOKEN_KEY=your-access-token-key
 TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
 ```
 LIRI Bot takes user input via the command line. 
-```node liri.js <liri-command> <search item here>```
-
-
+```
+node liri.js <liri-command> <search item here>
+```
+Currently LIRI has 4 built in commands that you can call.
+* my-tweets
+* spotify-this-song
+* movie-this
+* do-what-it-says
+### my-tweets
 
 
 ## Built with
