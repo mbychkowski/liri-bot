@@ -93,4 +93,37 @@ You can create your own LIRI command by adding a new JavaScript file containing 
 ```
 var keys = require('../keys');
 ```
-1. 
+1. Prepare new script. Follow `song.js`, `movie.js`, and `tweet.js` as a design guide pattern if needed.
+1. Export as a function and require in liri.js
+```
+var newSearch = require('./cmds/newCmd').newSearch;
+```
+1. Include function in `switch` statement
+```
+switch (liriDo) {
+
+  case 'my-tweets':
+    tweetSearch(liriQuery);
+    break;
+
+  case 'spotify-this-song':
+    spotifySearch(liriQuery);
+    break;
+
+  case 'movie-this':
+    omdbSearch(liriQuery);
+    break;
+    
+  \\ BEGIN: new case
+  case 'new-search':
+    newSearch(liriQuery);
+    break;
+  \\ END: new case
+
+  case 'do-what-it-says':
+    randomSearch();
+    break;
+
+  default:
+}
+```
