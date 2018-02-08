@@ -1,4 +1,4 @@
-var keys = require('./keys');
+var keys = require('../keys');
 
 var Twitter = require('twitter');
 var twitter = new Twitter(keys.twitter);

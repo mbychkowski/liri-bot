@@ -1,4 +1,4 @@
-var keys = require('./keys');
+var keys = require('../keys');
 
 var request = require('request');
 

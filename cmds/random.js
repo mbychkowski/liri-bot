@@ -5,7 +5,7 @@ var spotifySearch = require('./song').spotifySearch;
 var omdbSearch = require('./movie').omdbSearch;
 
 function randomSearch() {
-  fs.readFile('random.txt', 'utf8', function(error, data) {
+  fs.readFile('./cmds/random.txt', 'utf8', function(error, data) {
 
     if (error) {
       return console.log(error);

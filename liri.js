@@ -3,10 +3,10 @@ require('dotenv').config();
 
 var keys = require('./keys');
 
-var tweetSearch = require('./tweet').tweetSearch;
-var spotifySearch = require('./song').spotifySearch;
-var omdbSearch = require('./movie').omdbSearch;
-var randomSearch = require('./random').randomSearch;
+var tweetSearch = require('./cmds/tweet').tweetSearch;
+var spotifySearch = require('./cmds/song').spotifySearch;
+var omdbSearch = require('./cmds/movie').omdbSearch;
+var randomSearch = require('./cmds/random').randomSearch;
 
 // User inputs from command window
 var args = process.argv;
@@ -18,7 +18,7 @@ for (var i = 3; i < args.length; i++) {
 }
 
 // Process liri-bot inputs
-console.log('\nLiri, execute command', liriDo);
+console.log('\nLiri, execute command ' + '"' + liriDo + '"');
 console.log('\nLiri, query for', liriQuery);
 console.log('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 
