@@ -1,15 +1,25 @@
 # LIRI Bot
-LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
+LIRI is like iPhone's SIRI. However, while SIRI is a **Speech** Interpretation and Recognition Interface, LIRI is a **Language** Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
 ## How to use
+Before asking LIRI any difficult questions. User needs to obtain API keys for Twitter and Spotify and apply them to local `.env` file.
 ```
-How does this look
-to you and
-me
-function() {
-  console.log('Say something here.')
-}
+# Spotify API keys
+
+SPOTIFY_ID=your-spotify-id
+SPOTIFY_SECRET=your-spotify-secret
+
+# Twitter API keys
+
+TWITTER_CONSUMER_KEY=your-twitter-consumer-key
+TWITTER_CONSUMER_SECRET=your-twitter-consumer-secret
+TWITTER_ACCESS_TOKEN_KEY=your-access-token-key
+TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
 ```
+LIRI Bot takes user input via the command line. 
+```node liri.js <liri-command> <search item here>```
+
+
 
 
 ## Built with
