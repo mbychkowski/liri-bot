@@ -89,16 +89,16 @@ Liri, query for Scott Pilgrim vs The World
 You can create your own LIRI command by adding a new JavaScript file containing the command you want to create and requiring in the `liri.js` file. All new scripts should be placed in the `cmds` directory.
 
 1. Create new command script in `cmds` directory.
-1. Update and require keys.js as needed for any new API used.
+2. Update and require keys.js as needed for any new API used.
 ```
 var keys = require('../keys');
 ```
-1. Prepare new script. Follow `song.js`, `movie.js`, and `tweet.js` as a design guide pattern if needed.
-1. Export as a function and require in liri.js
+3. Prepare new script. Follow `song.js`, `movie.js`, and `tweet.js` as a design guide pattern if needed.
+4. Export as a function and require in liri.js
 ```
 var newSearch = require('./cmds/newCmd').newSearch;
 ```
-1. Include function in `switch` statement
+5. Include function in `switch` statement in `liri.js`.
 ```
 switch (liriDo) {
 
