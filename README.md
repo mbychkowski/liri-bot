@@ -86,4 +86,11 @@ Liri, query for Scott Pilgrim vs The World
 [dotenv](https://www.npmjs.com/package/dotenv) - "Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology."
 
 ## Create your own LIRI command (contributions)
-You can create your own LIRI command by following adding a new JavaScript file containing the command you want to create and requiring in the `liri.js` file.
+You can create your own LIRI command by adding a new JavaScript file containing the command you want to create and requiring in the `liri.js` file. All new scripts should be placed in the `cmds` directory.
+
+1. Create new command script in `cmds` directory.
+1. Update and require keys.js as needed for any new API used.
+```
+var keys = require('../keys');
+```
+1. 
